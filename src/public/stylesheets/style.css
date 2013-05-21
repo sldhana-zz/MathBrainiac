@@ -1,0 +1,239 @@
+@import url('bootstrap.css');
+
+/* main content */
+.container-fluid{
+    /*margin: 100px 0 0 0;*/
+}
+
+body{
+    background: #EBEDE3 url(../images/stripe.png) repeat;
+    text-rendering: optimizelegibility;
+}
+
+.no-outline{
+    outline: none;
+}
+
+/* header */
+header{
+    background: #39362F;
+    color: #ffffff;
+    border-bottom: 3px solid #F5F6EF;
+}
+
+header h1{
+    font-family: "Oswald","Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-variant: small-caps;
+    font-size: 1.6em;
+}
+
+header h1{
+    line-height: normal;
+}
+
+header h1 .smaller{
+    font-size: 0.8em;
+}
+
+header h1 .label{
+    margin: -10px 0 0 0;
+    font-variant: normal;
+}
+
+header #home{
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* footer */
+footer{
+    font-size: 1.4em;
+    color: #ffffff;
+    border-top: 2px solid #F5F6EF;
+    padding: 20px 0;
+    background: #6C7065;
+}
+
+footer.navbar .nav > li{
+    margin: 0 10px 0 0;
+}
+
+/* game choice */
+.card{
+    display: block;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 1px 4px 1px #B4B6A9, 2px 2px 1px 0 #FFFFFF inset;
+    margin-bottom: 20px;
+    padding: 20px;
+    color: #333333;
+    text-decoration: none;
+    background: #F8F9F4;
+    background-image: linear-gradient(#F8F9F4, #FDFDFB);
+}
+
+.card:hover{
+    background: #F4F2E3;
+    color: #333333;
+    text-decoration: none;
+}
+
+/* gameboard */
+
+.thumbnail{
+    background: #ffffff;
+}
+
+#gameBoard .thumbnail{
+    margin: 10px 0 0 0;
+}
+
+#expression{
+    font-size: 5.5em;
+    line-height: normal;
+    padding: 20px 0;
+    text-align: center;
+    font-weight: bold;
+    color: #FFECB0;
+    background: #fff url(../images/expression.jpg) repeat;
+}
+
+#answer{
+    min-height: 100px;
+    font-size: 3em;
+}
+
+#keys{
+    text-align: center;
+}
+
+#keyboard button{
+    margin: 0 10px 10px 0;
+    font-size: 25px;
+    padding: 20px 27px;
+}
+
+/* score  */
+@media (max-width: 767px) {
+    body{
+        padding: 0;
+    }
+
+    #score .row-fluid [class*="span"] {
+        float: left;
+    }
+
+    .container-fluid {
+        padding-right: 20px;
+        padding-left: 20px;
+    }
+
+    .navbar-fixed-top,
+    .navbar-fixed-bottom,
+    .navbar-static-top {
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+}
+
+@media (max-width: 480px) {
+    .navbar{
+        margin-bottom: 10px;
+    }
+    
+    #expression{
+        font-size: 5.0em;
+        padding: 0;
+    }
+
+    #answer{
+        min-height: 60px;
+        font-size: 2.5em;
+    }
+    
+    #keyboard button{
+        margin: 0 8px 8px 0;
+        font-size: 25px;
+        padding: 13px 20px;
+    }
+}
+
+#score{
+    text-align: center;
+    margin: 0 0 20px 0;
+}
+
+#score p{
+    margin: 5px 0 0 0;
+    font-weight: bold;
+}
+
+#score h6{
+    margin: 5px 0 5px 0;
+    text-transform: uppercase;
+    color: #6D7B78;
+}
+
+#score h5{
+    color: #BDD3D2;
+}
+
+#score .row-fluid .span4 {
+    width: 35%;
+    *width: 35%;
+    margin: 0;
+    border-left: 1px dashed #B9BDAD;
+}
+
+#score .row-fluid .span8 {
+    width: 65%;
+    *width: 65%;
+}
+
+#score .span4 > .span12:first-child{
+    border-bottom: 1px dashed #B9BDAD;
+}
+
+.row-fluid [class*="span"]:nth-child(2){
+    margin: 0;
+}
+
+/* previousScores */
+#previousScores table{
+    color: #4F4E4C;
+    background: #ffffff;
+}
+
+#previousScores table thead th{
+    color: #B3D8CF;
+    font-size: 1.1em;
+    text-transform: lowercase;
+}
+
+#previousScores table tbody span{
+    color: #cccccc;
+}
+
+#previousScores .uppercase{
+    text-transform: uppercase;
+    font-size: 0.8em;
+}
+
+#score .thumbnail{
+    background: url("../images/expression.jpg") repeat scroll 0 0 #FFFFFF;
+}
+
+#score .thumbnail h3 {
+    color: #FFECB0;
+    text-shadow: 1px 1px 0 #95B7B5;
+}
+
+#score .thumbnail h6{
+    color: #BDD3D2;
+    text-shadow: 2px 2px 0 #58807D;
+}
+
+#score .thumbnail p{
+    color: #ffffff;
+}

@@ -1,0 +1,92 @@
+<% if(data.addSub.length > 0 || data.multDiv.length > 0) { %>
+<div class="well well-large">
+    <fieldset>
+        <legend>Your Performance Chart</legend>
+    <div id="chart">
+
+    </div>
+        </fieldset>
+</div>
+<% } else { %>
+<div class="well well-large">
+    <p>We have no way of measuring your performance until you play some games!</p>
+</div>
+<% } %>
+
+<script>
+    var addSub = '<%= data.addSub %>';
+    var multDiv = '<%= data.multDiv %>';
+
+    if(addSub.length > 0){
+        var addSubData = addSub.split(',');
+        addSubData =_.map(addSubData, function(num){
+            return parseInt(num, 10)/1000;
+        });
+    }
+
+    if(multDiv.length > 0){
+        var multDivData = multDiv.split(',');
+        multDivData =_.map(multDivData, function(num){
+            return parseInt(num, 10)/1000;
+        });
+    }
+
+    var jsonConfig = {
+        graphset: [
+            {
+                'background-color': '#ffffff',
+                title: {
+                    'font-color': '#B3D8CF',
+                    'background-color': '#ffffff',
+                    'text-align': 'left',
+                    'font-family': 'Helvetica',
+                    'font-size': '25px'
+                },
+                type: 'line',
+                stacked: true,
+                legend: {
+                    layout: 1
+                },
+                plot: {
+                    'tooltip-text': '%v seconds'
+                },
+                series: [
+                ]
+            }
+        ]
+    };
+
+    if(addSub.length > 0){
+        jsonConfig.graphset[0].series.push({
+            values: addSubData,
+            text: 'Addition/Subtraction'
+        });
+    }
+
+    if(multDiv.length > 0){
+        jsonConfig.graphset[0].series.push({
+            values: multDivData,
+            text: 'Multiplication/Division'
+        });
+    }
+
+    function render() {
+        zingchart.OFFSET = 1;
+        zingchart.render({
+            id : 'chart',
+            output : 'svg',
+            width : '100%',
+            height : '100%',
+            dataurl : null,
+            data : jsonConfig
+        });
+    }
+
+    zingchart.loadModules('api,tooltip');
+    zingchart.MODULESDIR = "javascripts/lib/zingchart/modules/";
+
+    if('<%= data.addSub %>'.length > 0 || '<%= data.multDiv %>'.length > 0){
+        render();
+    }
+
+</script>

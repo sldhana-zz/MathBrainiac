@@ -1,0 +1,14 @@
+<section id="editOptions">
+    <div class="well well-large">
+         <fieldset>
+            <legend>Change my game level:</legend>
+            <label class="radio"><input id="easy" type="radio" name="level" value="easy" />Easy</label>
+            <label class="radio"><input id="medium" type="radio" name="level" value="medium" />Medium</label>
+            <label class="radio"><input id="hard" type="radio" name="level" value="hard" />Hard</label>
+        </fieldset>
+    </div>
+</section>
+<script>
+   var level= '<%= level %>';
+   $('#' + level).attr('checked', 'checked');
+</script>

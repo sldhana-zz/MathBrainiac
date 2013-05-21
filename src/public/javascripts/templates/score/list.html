@@ -1,0 +1,18 @@
+ <% if(collection.length > 0){ %>
+ <table class="table table-bordered">
+     <thead>
+         <tr>
+             <th>Time</th>
+             <th>Level</th>
+         </tr>
+     </thead>
+     <tbody>
+         <% _(collection).forEach(function(score){ %>
+         <tr>
+             <th><%= score.time.time %> <span><%= score.time.type %></span></th>
+             <td class="uppercase"><%= score.type %></td>
+         </tr>
+         <% }); %>
+     </tbody>
+ </table>
+  <% } %>
