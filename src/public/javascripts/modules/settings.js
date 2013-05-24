@@ -59,6 +59,11 @@ define([
                 var rank = _.indexOf(scores, lastScore, 0);
                 gameSettings.rank = rank + 1;
                 this.set('lastGame', gameType);
+              //reset to 0
+                if(version === 100){
+                    version = 0;
+                }
+                
                 gameSettings.version = version + 1;
                 this.save();
             },

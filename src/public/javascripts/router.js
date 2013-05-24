@@ -59,7 +59,7 @@ define([
                     params: {
                         type: type,
                         level: settings.get('level'),
-                        id: parseInt(gameTypeSettings.version, 10) + 1
+                        id: parseInt(gameTypeSettings.version, 10)
                     },
                     success: function(data){
                         self.setupGame(data.models, gameTypeSettings);
